@@ -42,18 +42,18 @@ const pool = router.getPool();
 
 async function main () {
     
-    try{
-        //// Check Authentication ////
-        var connected = await router.checkAuth ();
-        if(connected !== true || typeof(connected) == "undefined"){
-            console.log("Authentication fail!!!");
-            return;
-        }
-    }catch(e){
-        console.log("Authentication fail!!!");
-        console.log(e);
-        return;
-    }
+    // try{
+    //     //// Check Authentication ////
+    //     var connected = await router.checkAuth ();
+    //     if(connected !== true || typeof(connected) == "undefined"){
+    //         console.log("Authentication fail!!!");
+    //         return;
+    //     }
+    // }catch(e){
+    //     console.log("Authentication fail!!!");
+    //     console.log(e);
+    //     return;
+    // }
    
 
     try{
