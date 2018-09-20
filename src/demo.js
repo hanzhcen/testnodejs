@@ -44,10 +44,10 @@ async function main () {
 
     
     
-    var hw = encrypt("2018-09-26T03:12:46.391Z", algorithm, password, crypto)
+    var hw = router.encrypt("2018-09-26T03:12:46.391Z", algorithm, password, crypto)
     // outputs hello world
     console.log(hw);
-    console.log(decrypt(hw, algorithm, password, crypto));
+    console.log(router.decrypt(hw, algorithm, password, crypto));
 }
 
 
