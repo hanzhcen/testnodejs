@@ -1,1 +1,1 @@
-web: node 0.js
+web: node ./src/demo.js
