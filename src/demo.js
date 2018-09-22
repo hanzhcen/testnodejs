@@ -8,6 +8,8 @@ const expireredemption = require('../lib/expireredemption.js')
 const expiremembertier = require('../lib/expiremembertier.js')
 const tierevaluate = require('../lib/tierevaluate.js')
 const recalemembers = require('../lib/recalemembers.js')
+var crypto = require('asymmetric-crypto');
+var fs = require('fs');
 
 
 var environment = "";
@@ -28,26 +30,32 @@ const pool = router.getPool();
 
 async function main () {
 
-    var crypto;
-    try {
-        crypto = require('crypto');
-    } catch (err) {
-        console.log('crypto support is disabled!');
+    try{
+        //// Check Authentication ////
+        var connected = await router.checkAuth ();
+        if(connected !== true || typeof(connected) == "undefined"){
+            console.log("Authentication fail!!!");
+            return;
+        }
+    }catch(e){
+        console.log("Authentication fail!!!");
+        console.log(e);
+        return;
     }
-    var crypto = require('crypto');
-    // var algorithm = "AES-256-CBC";
-    // var password = "d6F3Efeq";
-    var algorithm = router.getALG();
-    var password = router.getCYP();
-    console.log(algorithm);
-    console.log(password);
+    
+    console.log("Authentication Successfull!!!");
+    // var server_subscription = {"data":"qSz4QaDp/c7ZLy0ZK3Ejk+hF32zyfsyQCwobUWYKGLtfgsqyRIxIXgpQY8adqzXe0wsiHTyh/hvuBP3zrH6xs4xIlsf8dQt4/3OdWqIZZqHCmdbkZjFqgki6BRcVjGIP+ZkpMGrtJeQxmfWGMF/gRck=","nonce":"NvPQfrONhYayvrJf+L6+HPOzWhtqGGcG","signature":"BmriDB4KrOvyMgfQnl4M91Y0H6nStv6FBqDW9Et6PY6GoyWRI3P6oT025Wq3lOHwgCvhadWRnRPL0CJL4M1cDA=="};
+    // fs.writeFile('./lib/auth.json', JSON.stringify(server_subscription), function(err) {
+    //     if(err) {
+    //         return console.log(err);
+    //     }
+    //     console.log("auth.json was updated");
 
+    // }); 
+
+    // var local_json_is_integrity = await router.check_local_json();
+    // console.log(local_json_is_integrity) 
     
-    
-    var hw = router.encrypt("2018-09-26T03:12:46.391Z", algorithm, password, crypto)
-    // outputs hello world
-    console.log(hw);
-    console.log(router.decrypt(hw, algorithm, password, crypto));
 }
 
 

@@ -21,9 +21,8 @@ var processDate = "";
 var recordtime = false;
 
 
-
 environment = 'production';
-// var processDate = "T+0";
+var processDate = "T+0";
 recordtime = true;
 
 
@@ -54,10 +53,12 @@ async function main () {
         console.log(e);
         return;
     }
+    
+    console.log("Authentication Successfull!!!");
    
 
     try{
-        var testName = 'Go-live Test 20180919';
+        var testName = 'Go-live Test 20180922';
         var starttime = "";
         var middletime = "";
         var endtime = "";
@@ -252,7 +253,6 @@ async function main () {
         console.log(endtime);
         console.log("time finish daily jobs");
         console.log(finishtime);
-
 
 
     }catch(e){
