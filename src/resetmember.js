@@ -18,7 +18,7 @@ async function main () {
     //101, Chi Ming Wong (0010l00000RkpdmAAB),594537, Silver, 2018-08-28 16:52:03, need reset datetiertime, simonwong0115@gmail.com
     //22666, Wing Keung Kwok (0010l00000RBSMTAA5),1565775, Bronze, 2018-08-27 18:43:47, , kwokchai@mac.com
     //33529, Pak Ho Pako Lau (0010l00000Tug8iAAB), 
-
+    //19799, Jantzen Ho, 0010l00000TFiHIAA1
 
     // querystring = "SELECT ivls__pgid__c FROM loyaltycore.account  WHERE ivls__pointsbalance__pc > 0 order by ivls__pgid__c;"
     // var targetArray = (await router.query_one_way(querystring)).rows;
@@ -41,7 +41,7 @@ async function main () {
     //Pak Ho Pako Lau, 0010l00000Tug8iAAB, 33529
     // var targetMemberPGID = 22666;//PGID
     // var targetMemberSFID = '0010l00000RBSMTAA5';
-    var targetArray = [101];
+    var targetArray = [19799];
     // var targetArray = [12342,22664, 22665, 101, 22666, 33529, 12039];
     // var newtargetArray = [];
     // for(var i=0;i<targetArray.length;i++){

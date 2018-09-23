@@ -8,13 +8,13 @@ const tierevaluate = require('../lib/tierevaluate.js')
 const recalemembers = require('../lib/recalemembers.js')
 
 
-var log_level = "none";
-var debug_mode = router.getDebugMode();
-if(router.isNotNull(debug_mode)){
-    if(debug_mode == true){
-        log_level = "debug";
-    }
-}
+var log_level = "debug";
+// var debug_mode = router.getDebugMode();
+// if(router.isNotNull(debug_mode)){
+//     if(debug_mode == true){
+//         log_level = "debug";
+//     }
+// }
 
 var environment = "";
 var processDate = "";
@@ -22,7 +22,7 @@ var recordtime = false;
 
 
 environment = 'production';
-var processDate = "T+0";
+// var processDate = "T+0";
 recordtime = true;
 
 
@@ -36,6 +36,7 @@ if(processDate !== 'T+0'){
 
 
 console.log("//////////////////////////////   START   //////////////////////////////") 
+console.log("///////////////////////   Version 1.20180922.1   //////////////////////") 
 
 const pool = router.getPool();
 

@@ -30,20 +30,24 @@ const pool = router.getPool();
 
 async function main () {
 
-    try{
-        //// Check Authentication ////
-        var connected = await router.checkAuth ();
-        if(connected !== true || typeof(connected) == "undefined"){
-            console.log("Authentication fail!!!");
-            return;
-        }
-    }catch(e){
-        console.log("Authentication fail!!!");
-        console.log(e);
-        return;
-    }
+    // try{
+    //     //// Check Authentication ////
+    //     var connected = await router.checkAuth ();
+    //     if(connected !== true || typeof(connected) == "undefined"){
+    //         console.log("Authentication fail!!!");
+    //         return;
+    //     }
+    // }catch(e){
+    //     console.log("Authentication fail!!!");
+    //     console.log(e);
+    //     return;
+    // }
     
-    console.log("Authentication Successfull!!!");
+    // console.log("Authentication Successfull!!!");
+    var str = "My's day";
+    console.log(str);
+    str = str.replace(/'/g, "''");
+    console.log(str);
     // var server_subscription = {"data":"qSz4QaDp/c7ZLy0ZK3Ejk+hF32zyfsyQCwobUWYKGLtfgsqyRIxIXgpQY8adqzXe0wsiHTyh/hvuBP3zrH6xs4xIlsf8dQt4/3OdWqIZZqHCmdbkZjFqgki6BRcVjGIP+ZkpMGrtJeQxmfWGMF/gRck=","nonce":"NvPQfrONhYayvrJf+L6+HPOzWhtqGGcG","signature":"BmriDB4KrOvyMgfQnl4M91Y0H6nStv6FBqDW9Et6PY6GoyWRI3P6oT025Wq3lOHwgCvhadWRnRPL0CJL4M1cDA=="};
     // fs.writeFile('./lib/auth.json', JSON.stringify(server_subscription), function(err) {
     //     if(err) {
